@@ -11,7 +11,7 @@ export default defineConfig({
         ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' }],
         ['meta', { name: 'msapplication-TileColor', content: '#00aba9' }],
         ['meta', { name: 'theme-color', content: '#ffffff' }],
-        ['script', { defer: "true", "data-domain": "stack.jimmycai.com", src: 'https://stat.jimmycai.com/js/include.js' }],
+        ['script', { defer: "true", "data-website-id": "fa68cca8-9be3-457e-8322-7d0e8060e1d6", src: 'https://cloud.umami.is/script.js' }],
     ],
 
     markdown: {
