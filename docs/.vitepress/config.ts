@@ -32,11 +32,7 @@ export default defineConfig({
                     copyright: "Copyright © 2020 - Present Jimmy Cai",
                 },
 
-                sidebar: {
-                    '/guide/': sidebarGuide(),
-                    '/config/': sidebarGuide(),
-                    '/writing/': sidebarGuide(),
-                },
+                sidebar: sidebarGuide(),
 
                 nav: [
                     { text: 'Guide', link: '/guide/' },
@@ -61,11 +57,7 @@ export default defineConfig({
                     copyright: "Copyright © 2020 - Present Jimmy Cai",
                 },
 
-                sidebar: {
-                    '/zh/guide/': sidebarGuideZh(),
-                    '/zh/config/': sidebarGuideZh(),
-                    '/zh/writing/': sidebarGuideZh(),
-                },
+                sidebar: sidebarGuideZh(),
 
                 nav: [
                     { text: '指南', link: '/zh/guide/' },
