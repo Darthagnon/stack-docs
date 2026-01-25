@@ -19,7 +19,6 @@ export default defineConfig({
 
     markdown: {
         lineNumbers: true,
-        theme: 'one-dark-pro'
     },
 
     cleanUrls: true,
@@ -71,7 +70,7 @@ function sidebarGuide() {
     return [
         {
             text: 'Introduction',
-            collapsible: true,
+            collapsed: false,
             items: [
                 { text: 'About Stack', link: '/guide/' },
                 { text: 'Getting Started', link: '/guide/getting-started' },
@@ -80,7 +79,7 @@ function sidebarGuide() {
         },
         {
             text: 'Writing',
-            collapsible: true,
+            collapsed: false,
             items: [
                 { text: 'Markdown', link: '/writing/markdown' },
                 {
@@ -91,7 +90,7 @@ function sidebarGuide() {
         },
         {
             text: 'Config',
-            collapsible: true,
+            collapsed: false,
             items: [
                 {
                     text: 'Introduction',
