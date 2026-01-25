@@ -1,9 +1,6 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-    lang: 'en-US',
-    title: 'Stack',
-    description: 'Card-style Hugo theme designed for bloggers',
     lastUpdated: true,
 
     head: [
@@ -23,33 +20,89 @@ export default defineConfig({
 
     cleanUrls: true,
 
+    locales: {
+        root: {
+            label: 'English',
+            lang: 'en-US',
+            title: 'Stack',
+            description: 'Card-style Hugo theme designed for bloggers',
+            themeConfig: {
+                footer: {
+                    message: "Documentation released under the MIT License, logo designed by Jimmy Cai, all rights reserved.",
+                    copyright: "Copyright © 2020 - Present Jimmy Cai",
+                },
+
+                sidebar: {
+                    '/guide/': sidebarGuide(),
+                    '/config/': sidebarGuide(),
+                    '/writing/': sidebarGuide(),
+                },
+
+                nav: [
+                    { text: 'Guide', link: '/guide/' },
+                    { text: 'Config', link: '/config/' },
+                ],
+
+                editLink: {
+                    pattern: 'https://github.com/CaiJimmy/stack-docs/edit/master/docs/:path',
+                    text: 'Edit this page on GitHub'
+                },
+            }
+        },
+        zh: {
+            label: '简体中文',
+            lang: 'zh-CN',
+            link: '/zh/',
+            title: 'Stack',
+            description: '为博客设计的卡片式 Hugo 主题',
+            themeConfig: {
+                footer: {
+                    message: "文档以 MIT 协议发布，徽标由 Jimmy Cai 设计，保留所有权利。",
+                    copyright: "Copyright © 2020 - Present Jimmy Cai",
+                },
+
+                sidebar: {
+                    '/zh/guide/': sidebarGuideZh(),
+                    '/zh/config/': sidebarGuideZh(),
+                    '/zh/writing/': sidebarGuideZh(),
+                },
+
+                nav: [
+                    { text: '指南', link: '/zh/guide/' },
+                    { text: '配置', link: '/zh/config/' },
+                ],
+
+                editLink: {
+                    pattern: 'https://github.com/CaiJimmy/stack-docs/edit/master/docs/:path',
+                    text: '在 GitHub 上编辑此页'
+                },
+
+                outline: {
+                    label: '本页目录'
+                },
+
+                docFooter: {
+                    prev: '上一页',
+                    next: '下一页'
+                },
+
+                lastUpdatedText: '最后更新于',
+
+                returnToTopLabel: '回到顶部',
+                sidebarMenuLabel: '菜单',
+                darkModeSwitchLabel: '主题',
+                lightModeSwitchTitle: '切换到浅色模式',
+                darkModeSwitchTitle: '切换到深色模式'
+            }
+        }
+    },
+
     themeConfig: {
         logo: '/logo.png',
-
-        footer: {
-            message: "Documentation released under the MIT License, logo designed by Jimmy Cai, all rights reserved.",
-            copyright: "Copyright © 2020 - Present Jimmy Cai",
-        },
-
-        sidebar: {
-            '/guide/': sidebarGuide(),
-            '/config/': sidebarGuide(),
-            '/writing/': sidebarGuide(),
-        },
-
-        nav: [
-            { text: 'Guide', link: '/guide/' },
-            { text: 'Config', link: '/config/' },
-        ],
 
         socialLinks: [
             { icon: 'github', link: 'https://github.com/CaiJimmy/hugo-theme-stack' }
         ],
-
-        editLink: {
-            pattern: 'https://github.com/CaiJimmy/stack-docs/edit/master/docs/:path',
-            text: 'Edit this page on GitHub'
-        },
 
         outline: [2, 3],
 
@@ -151,6 +204,97 @@ function sidebarGuide() {
                 {
                     text: 'Image Processing',
                     link: '/config/image-processing'
+                }
+            ]
+        },
+    ]
+}
+
+function sidebarGuideZh() {
+    return [
+        {
+            text: '指南',
+            collapsed: false,
+            items: [
+                { text: '关于 Stack', link: '/zh/guide/' },
+                { text: '开始使用', link: '/zh/guide/getting-started' },
+                { text: '修改主题', link: '/zh/guide/modify-theme' }
+            ]
+        },
+        {
+            text: '写作',
+            collapsed: false,
+            items: [
+                { text: 'Markdown', link: '/zh/writing/markdown' },
+                {
+                    text: 'Frontmatter 配置', link: '/zh/writing/frontmatter'
+                },
+                { text: '短代码', link: '/zh/writing/shortcodes' },
+            ]
+        },
+        {
+            text: '配置',
+            collapsed: false,
+            items: [
+                {
+                    text: '介绍',
+                    link: '/zh/config/'
+                },
+                {
+                    text: '站点配置',
+                    link: '/zh/config/site'
+                },
+                {
+                    text: 'i18n 配置',
+                    link: '/zh/config/i18n'
+                },
+                {
+                    text: '自定义菜单',
+                    link: '/zh/config/menu'
+                },
+                {
+                    text: '自定义页眉 / 页脚',
+                    link: '/zh/config/header-footer'
+                },
+                {
+                    text: '日期格式',
+                    link: '/zh/config/date-format'
+                },
+                {
+                    text: '侧边栏',
+                    link: '/zh/config/sidebar'
+                },
+                {
+                    text: '页脚',
+                    link: '/zh/config/footer'
+                },
+                {
+                    text: '文章',
+                    link: '/zh/config/article'
+                },
+                {
+                    text: '评论',
+                    link: '/zh/config/comments'
+                },
+                {
+                    text: '小部件',
+                    link: '/zh/config/widgets'
+                },
+                {
+                    text: 'Open Graph',
+                    link: '/zh/config/open-graph'
+                },
+                {
+                    text: '默认图片',
+                    link: '/zh/config/default-image'
+                },
+                {
+                    text: '配色方案',
+                    link: '/zh/config/color-scheme'
+                },
+                {
+                    text: '图片处理',
+                    link: '/zh/config/image-processing'
                 }
             ]
         },
